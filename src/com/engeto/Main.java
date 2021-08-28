@@ -98,44 +98,16 @@ public class Main {
 //svatky
 
         HashMap<MonthDay, String> event = new HashMap<MonthDay, String>();
-        MonthDay date = MonthDay.of(01,01);
-        for (int i=1; i<32; i++) {
-            date = date.withDayOfMonth(i);
-            event.put(date, "svatek ešte nezadany");
-                    }
-        for (int i=1; i<30; i++) {
-            date = MonthDay.of(02, 01);
-                date = date.withDayOfMonth(i);
-                event.put(date, "svatek ešte nezadany");
-            }
-        for (int i=1; i<32; i++) {
-            date = MonthDay.of(03, 01);
-            date = date.withDayOfMonth(i);
-            event.put(date, "svatek ešte nezadany");
-        }
-
-        for (int i=1; i<31; i++) {
-            date = MonthDay.of(4, 01);
-            date = date.withDayOfMonth(i);
-            event.put(date, "svatek ešte nezadany");
-        }
-        //august
-        for (int i=1; i<32; i++) {
-            date = MonthDay.of(8, 01);
-            date = date.withDayOfMonth(i);
-            event.put(date, "svatek ešte nezadany");
-        }
-//atd...
+   
         event.put(MonthDay.of(01,01), "Nový rok");
         event.put(MonthDay.of(02,01), "Tatiana");
         event.put(MonthDay.of(02,02), "Erika a Erik");
         event.put(MonthDay.of(03,03), "Bohumil a Bohumila");
         event.put(MonthDay.of(04,01), "Hugo");
 
-        System.out.println("dnes ma svatek " + event.get(MonthDay.now()));
+        System.out.println("dnes ma svatek " + event.getOrDefault(MonthDay.now(), "Svátek není zadaný"));
         MonthDay date1 = MonthDay.of(04,01);
         System.out.println(date1 + " ma svatek " + event.get(date1));
-
 
 
     }
